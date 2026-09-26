@@ -1,0 +1,77 @@
+--- /mnt/data/ans_iomap_audit/dma.c.baseline	2026-09-25 22:35:06.270935530 +0000
++++ src/dma.c	2026-09-25 22:35:06.872247404 +0000
+@@ -77,20 +77,66 @@
+     UNREFERENCED_PARAMETER(Adapter); UNREFERENCED_PARAMETER(MapRegisterBase); UNREFERENCED_PARAMETER(WriteToDevice);
+     /* one physically contiguous run at a time, taken from the MDL's page array */
+     PULONG pages = (PULONG)(Mdl + 1);
+-    ULONG offset = (ULONG)CurrentVa - (ULONG)Mdl->StartVa;      /* StartVa is page aligned */
++    ULONG requested = *Length;
++    ULONG byteOffset = Mdl->ByteOffset, byteCount = Mdl->ByteCount;
++
++    /* A true zero-length request needs no PFN lookup and makes no progress by definition. */
++    if (!requested) {
++        *Length = 0;
++        *Result = (PHYSICAL_ADDRESS)0;
++        return Result;
++    }
++
++    /* Never turn malformed MDL geometry into a PFN-array index. */
++    if (byteOffset >= 4096 || !byteCount || byteCount > 0xFFFFFFFFu - byteOffset)
++        KeBugCheckEx(0xE2, 0x494D0001, (ULONG)Mdl, byteOffset, byteCount);
++
++    ULONG limit = byteOffset + byteCount;
++    ULONG current = (ULONG)CurrentVa;
++    ULONG offset = 0xFFFFFFFFu;
++    ULONG start = (ULONG)Mdl->StartVa;
++
++    /* MapTransfer's normal index is MmGetMdlVirtualAddress(Mdl) == StartVa + ByteOffset. */
++    if (current >= start) {
++        ULONG rel = current - start;
++        if (rel >= byteOffset && rel < limit)
++            offset = rel;
++    }
++
++    /* Defensive mapped-VA fallback: trust MappedSystemVa only when NT marks it valid. */
++    if (offset == 0xFFFFFFFFu &&
++        (Mdl->MdlFlags & 0x0001) &&       /* MDL_MAPPED_TO_SYSTEM_VA */
++        Mdl->MappedSystemVa) {
++        ULONG mapped = (ULONG)Mdl->MappedSystemVa;
++        if (current >= mapped) {
++            ULONG progress = current - mapped;
++            if (progress < byteCount)
++                offset = byteOffset + progress;
++        }
++    }
++
++    /* The NT4 SCSIPORT scatter/gather caller has no safe zero-progress error return. */
++    if (offset == 0xFFFFFFFFu)
++        KeBugCheckEx(0xE2, 0x494D0002, (ULONG)Mdl, current, requested);
++
+     ULONG idx = offset >> 12, inpage = offset & 0xFFF;
+-    ULONG limit = Mdl->ByteOffset + Mdl->ByteCount;
+-    ULONG run = 4096 - inpage, total = limit - offset, npages = (limit + 4095) >> 12;
++    ULONG total = limit - offset;
++    ULONG npages = (ULONG)(((ULONGLONG)limit + 4095u) >> 12);
++    ULONG maxRun = requested < total ? requested : total;
++    ULONG run = 4096 - inpage;
++    if (run > maxRun) run = maxRun;
+ 
+-    for (;;) {
+-        ULONG next = (run + inpage) >> 12;
+-        if (run >= *Length || run >= total) break;
++    while (run < maxRun) {
++        ULONG next = (ULONG)(((ULONGLONG)run + inpage) >> 12);
+         if (idx + next >= npages) break;
+         if (pages[idx + next] != pages[idx] + next) break;
++        ULONG remaining = maxRun - run;
++        if (remaining <= 4096) {
++            run = maxRun;
++            break;
++        }
+         run += 4096;
+     }
+-    if (run > *Length) run = *Length;
+-    if (run > total) run = total;
+     *Length = run;
+     *Result = (PHYSICAL_ADDRESS)((pages[idx] << 12) + inpage);
+     return Result;
