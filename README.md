@@ -43,6 +43,16 @@ through this HAL:
 
 ## Where it stands
 
+**Physical ANS update — 2026-10-02:** installed-system hardware testing has reached
+`Beep.SYS` / `C0000221`. The current HAL validation probe is blocked by an earlier
+HAL-load rejection, and a temporary loader-status diagnostic has been verified on
+disk. Its first boot-script evaluation stopped in firmware with `CLAIM failed`;
+stock-loader restoration remains pending. Read the
+[hardware progress checkpoint](docs/ANS-HARDWARE-PROGRESS-2026-10-02.md) for evidence,
+limits and the next test.
+
+### Original emulator milestone
+
 Setup gets through its hardware detection, licence agreement and partitioning, creates and
 formats a partition, accepts an install directory, and begins writing to the disk. There has been
 a next wall at every stage of this and there will be more; what follows is where it stands, not
@@ -59,8 +69,10 @@ where it stops:
 
 Screenshots of every screen are in [`traces/`](traces/).
 
-**Not yet:** a completed install; a keyboard driver of our own (see *Borrowed parts* below);
-real hardware. The full list is in the charter, §9.
+**Original emulator limitations:** the initial milestone did not establish a completed
+install or a keyboard driver of our own (see *Borrowed parts* below). The original
+scope is in the charter, §9; current physical hardware results are documented in the
+[2026-10-02 checkpoint](docs/ANS-HARDWARE-PROGRESS-2026-10-02.md).
 
 ## What we were given
 
