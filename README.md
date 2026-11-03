@@ -43,13 +43,13 @@ through this HAL:
 
 ## Where it stands
 
-**Physical ANS update — 2026-10-02:** installed-system hardware testing has reached
-`Beep.SYS` / `C0000221`. The current HAL validation probe is blocked by an earlier
-HAL-load rejection, and a temporary loader-status diagnostic has been verified on
-disk. Its first boot-script evaluation stopped in firmware with `CLAIM failed`;
-stock-loader restoration remains pending. Read the
-[hardware progress checkpoint](docs/ANS-HARDWARE-PROGRESS-2026-10-02.md) for evidence,
-limits and the next test.
+**Physical ANS update — 2026-11-03:** the corrected NT firmware configuration
+now reaches the NT loader, which still rejects HALV1. The reviewed LDRRS1
+status diagnostic is installed and verified; its next boot output is awaited,
+with stock-loader restoration required afterward. Follow the
+[current hardware progress](docs/ANS-HARDWARE-PROGRESS-2026-11-03.md),
+[short startup procedure](docs/ANS-STARTUP.md), and
+[BLUE/GREEN file-backup downloads](archives/floppies/2026-11-03/README.md).
 
 ### Original emulator milestone
 
@@ -72,7 +72,7 @@ Screenshots of every screen are in [`traces/`](traces/).
 **Original emulator limitations:** the initial milestone did not establish a completed
 install or a keyboard driver of our own (see *Borrowed parts* below). The original
 scope is in the charter, §9; current physical hardware results are documented in the
-[2026-10-02 checkpoint](docs/ANS-HARDWARE-PROGRESS-2026-10-02.md).
+[2026-11-03 checkpoint](docs/ANS-HARDWARE-PROGRESS-2026-11-03.md).
 
 ## What we were given
 
@@ -233,3 +233,4 @@ This project stands on other people's work:
 - **MCJack123** — [`maciNTosh-bandit`](https://github.com/MCJack123/maciNTosh-bandit), the port
   of that ARC firmware to Bandit-class Power Macs, which is what put the Cuda/ADB code on this
   machine's hardware.
+

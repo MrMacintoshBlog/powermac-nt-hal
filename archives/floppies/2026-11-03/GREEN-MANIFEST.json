@@ -1,0 +1,21 @@
+{
+  "color": "GREEN",
+  "prepared_date": "2026-11-03",
+  "kind": "saved-file-backup",
+  "raw_disk_image": false,
+  "fresh_physical_capture": false,
+  "files": [
+    {
+      "path": "files/OSLNEW.SCT",
+      "bytes": 512,
+      "sha256": "efde44a89be228b2eb2b646d27eab19cdc60e7f937f5cf5fb54a55cbb7bf8d14",
+      "source": "Saved full ANS load capture, 2026-10-02; matching media fingerprint rechecked 2026-11-03"
+    },
+    {
+      "path": "files/OSLOLD.SCT",
+      "bytes": 512,
+      "sha256": "5a8545691c158cadbaa26f8613124050cec0f938c8402855feb13d7a5fc2c052",
+      "source": "Saved full ANS load capture, 2026-10-02; matching media fingerprint rechecked 2026-11-03"
+    }
+  ]
+}

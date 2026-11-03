@@ -1,0 +1,13 @@
+User-supplied serial output, 2026-11-03, after selected BLUE boot with restored
+stock loader and corrected NT firmware configuration:
+
+  multi(0)scsi(1)disk(0)rdisk(0)partition(2)\WINNT\System32\ntoskrnl.exe
+  multi(0)scsi(1)disk(0)rdisk(0)partition(1)\os\winnt40\hal.dll
+Press spacebar NOW to invoke Hardware Profile/Last Known Good menu
+Windows NT could not start because the following file is missing or corrupt:
+'osloader'\hal.dll
+Please re-install a copy of the above file.
+Program complete - please reboot.
+EXIT called ok
+0 >   ok
+0 >

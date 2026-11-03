@@ -1,0 +1,24 @@
+User-pasted physical OF output, 2026-11-03, summarized without changing values:
+hex -> ok
+setenv real-base 3F00000 -> ok
+setenv load-base 3E00000 -> ok
+setenv real-mode? false -> ok
+setenv little-endian? true -> ok
+reset-all -> OpenFirmware2.26 banner, BOOT<return> instruction, ok,0>
+
+Post-reset printenv CURRENT / DEFAULT:
+input-device        ttya:38400          kbd
+output-device       ttya:38400          screen
+auto-boot?          false               true
+real-base           3F00000             -1
+load-base           3E00000             4000
+real-mode?          false               true
+little-endian?      true                false
+virt-base           -1                  -1
+load-base . -> 3E00000
+loadaddr . -> 3E00000
+eject fd -> ok
+Final prompt:0>
+
+All verified working settings match. No recovery file reload or HDD operation
+in this capture. Insert GREEN before the next recovery load.

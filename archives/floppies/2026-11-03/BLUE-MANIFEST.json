@@ -1,0 +1,135 @@
+{
+  "color": "BLUE",
+  "prepared_date": "2026-11-03",
+  "kind": "saved-file-backup",
+  "raw_disk_image": false,
+  "fresh_physical_capture": false,
+  "files": [
+    {
+      "path": "files/BEEPREF.SYS",
+      "bytes": 6512,
+      "sha256": "d75157a2b1f98a730efdd9f09cab08e4f80f95625a35fad0bc2072ce5740a2e3",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/BOOT.OF",
+      "bytes": 6978,
+      "sha256": "684e5bdd75b444c0e011b5921322e1ca72887a0deec8c320ae3331c79fc305f8",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/BOOTDISK.OF",
+      "bytes": 2783,
+      "sha256": "899c376fdec05281190ddab5ba3459941aeb03b1d4131b120e4cd6485e2d4741",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/HALBL1.DLL",
+      "bytes": 54784,
+      "sha256": "80133b18d987c4cb17defb94339bf591b6e1ad1d0fa389ecb4980f3f53e729c0",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/HALBM1.DLL",
+      "bytes": 54784,
+      "sha256": "43fea6cc710e6181c8f0288fd9637e5d29559b4e900cd4e2f98b7cd3914c8f2b",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/HALBR2.DLL",
+      "bytes": 54784,
+      "sha256": "8319425aafffcf5667282cc8216728d2168bf836f167752bde946c8ba9b9e178",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/HALCR1.DLL",
+      "bytes": 54784,
+      "sha256": "7769f25f6641b3aeb613c86cec7d48cf9403085ecef04308f9eeda810e2ffc5e",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/HALIM2.DLL",
+      "bytes": 54784,
+      "sha256": "d2fb635ae4760ffe394dafa80e41fe6e06e60b3b7b2725316160fb16a5d89c8f",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/HALNP1.DLL",
+      "bytes": 54784,
+      "sha256": "ac597719a7a3fd022a0beed670e6dad48d097587ece5f0fa494ce2ef1fef53e3",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/HALRS1.DLL",
+      "bytes": 54784,
+      "sha256": "92948e031626252109f73f82192d4650529975f1ad35326379a855bfd831f499",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/HALSHINR.DLL",
+      "bytes": 54784,
+      "sha256": "4efab44670969fa1e35df6ef86202161bc0102efce0ab9f8df0482bbf0271b51",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/HALSR1.DLL",
+      "bytes": 54784,
+      "sha256": "dc2aa2583b22ab8db347ce8d13fc12dc006794550d4432e6ad04b327ebee8e6d",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/HALSR2.DLL",
+      "bytes": 54784,
+      "sha256": "8c66d114dc159c56816916e5ce0db07c3136e96915261a8180c3b4775d98a1dd",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/HALSW1.DLL",
+      "bytes": 54784,
+      "sha256": "125ec8af23ea0731167845f48f70d7117534453c1c21c58b60230a241d18c5de",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/HALSWP1.DLL",
+      "bytes": 54784,
+      "sha256": "125ec8af23ea0731167845f48f70d7117534453c1c21c58b60230a241d18c5de",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/HALV1.DLL",
+      "bytes": 54784,
+      "sha256": "c7ad0c254faf580563fc3c672c4afb045b3aa49ae234346574a7721351b2d076",
+      "source": "Preserved candidate matching the documented BLUE HALV1 filesystem readback, 2026-10-02"
+    },
+    {
+      "path": "files/PPC/SETUPLDR",
+      "bytes": 398848,
+      "sha256": "a32ce1c2949946ba663281d75e70480883e42b56046ff9dc606882a57fa0cb8e",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/PPC/VENEER.EXE",
+      "bytes": 161792,
+      "sha256": "399d8c9265c0fa7c95bb86bf255af32c186d3dc6536d550f0419495a0fe40f93",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/PPC/VENEERD.EXE",
+      "bytes": 161792,
+      "sha256": "1ab0912ef40d907c18107ca6cf73edaccb1aafb5e526eed8da0ec1ba13db9fc1",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/SETUP.OF",
+      "bytes": 392,
+      "sha256": "620724238e6d28befebe6dfdfb88aa6e73ca9c5ee7e9b8c7604a6dd35f9c9458",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    },
+    {
+      "path": "files/TXTSETUP.OEM",
+      "bytes": 1324,
+      "sha256": "294205d795188a7523a06c781894877935b64f37c7f63a1e23e61e79c6edd409",
+      "source": "Verified BLUE file backup before HALV1 transfer, 2026-10-02"
+    }
+  ]
+}
