@@ -1,0 +1,202 @@
+HAL: ext int: events 00400000 mask 00400000 pending 00400000
+HAL: ext int: events 00000000 mask 00000000 pending 00000000
+HAL: ext int: events 00400000 mask 00400000 pending 00400000
+HAL: ext int: events 00000000 mask 00000000 pending 00000000
+HAL: ext int: events 00400000 mask 00400000 pending 00400000
+HAL: ext int: events 00000000 mask 00000000 pending 00000000
+HAL: ext int: events 00400000 mask 00400000 pending 00400000
+HAL: ext int: events 00000000 mask 00000000 pending 00000000
+HAL: ext int: events 00400000 mask 00400000 pending 00400000
+HAL: ext int: events 00000000 mask 00000000 pending 00000000
+HAL: ext int: events 00400000 mask 00400000 pending 00400000
+HAL: HalAssignSlotResources bus 0 dev 18 fn 0 -> 4 resources
+HAL: TranslateBusAddress type 5 bus 0 addr f3103000 space 0
+HAL: GetAdapter type 5 bus 0 master 1 sg 1 maxlen 00ffffff
+HAL: GetInterruptVector type 5 bus 0 level 26 vector 26
+HAL: EnableSystemInterrupt vector 58 irql 24
+adbport: ADB keyboard, mouse and OEM disk for the Apple Network Server (powermac-nt-hal)
+adbport: the HAL reports no OEM disk image; \Device\Floppy0 not created
+HAL: ADB autopoll on
+adbport: up; keyboard, pointer, no OEM disk
+HAL: IoReadPartitionTable: 2 partitions, signature 4e544844
+HAL:   #1 type 00000006 start 00001000 len 00010000 recognized
+HAL:   #2 type 00000006 start 00011020 len 007cffe0 recognized
+HAL: IoReadPartitionTable: 2 partitions, signature 4e544844
+HAL:   #1 type 00000006 start 00001000 len 00010000 recognized
+HAL:   #2 type 00000006 start 00011020 len 007cffe0 recognized
+HAL: GetInterruptVector type 5 bus 0 level 1 vector 1
+HAL: GetInterruptVector type 5 bus 0 level 12 vector 12
+HAL: TranslateBusAddress type 5 bus 0 addr 00000060 space 1
+HAL: TranslateBusAddress type 5 bus 0 addr 00000060 space 1
+HAL: TranslateBusAddress type 5 bus 0 addr 00000060 space 1
+adbport: mouse class connected, service e70584bc
+adbport: keyboard class connected, service e70644bc
+HAL: GetBusData PCI bus 0 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: GetBusData PCI bus 0 slot 0000000f off 00000000 len 64 -> 64 (00a01013)
+HAL: GetBusData PCI bus 0 slot 00000010 off 00000000 len 64 -> 64 (0002106b)
+HAL: GetBusData PCI bus 0 slot 00000011 off 00000000 len 64 -> 64 (00011000)
+HAL: GetBusData PCI bus 0 slot 00000012 off 00000000 len 64 -> 64 (00011000)
+HAL: GetBusData PCI bus 0 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: GetBusData PCI bus 0 slot 0000000f off 00000000 len 64 -> 64 (00a01013)
+HAL: GetBusData PCI bus 0 slot 00000010 off 00000000 len 64 -> 64 (0002106b)
+HAL: GetBusData PCI bus 0 slot 00000011 off 00000000 len 64 -> 64 (00011000)
+HAL: GetBusData PCI bus 0 slot 00000012 off 00000000 len 64 -> 64 (00011000)
+HAL: GetBusData PCI bus 0 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: GetBusData PCI bus 0 slot 0000000f off 00000000 len 64 -> 64 (00a01013)
+HAL: GetBusData PCI bus 0 slot 00000010 off 00000000 len 64 -> 64 (0002106b)
+HAL: GetBusData PCI bus 0 slot 00000011 off 00000000 len 64 -> 64 (00011000)
+HAL: GetBusData PCI bus 0 slot 00000012 off 00000000 len 64 -> 64 (00011000)
+HAL: GetBusData PCI bus 0 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: GetBusData PCI bus 0 slot 0000000f off 00000000 len 64 -> 64 (00a01013)
+HAL: GetBusData PCI bus 0 slot 00000010 off 00000000 len 64 -> 64 (0002106b)
+HAL: GetBusData PCI bus 0 slot 00000011 off 00000000 len 64 -> 64 (00011000)
+HAL: GetBusData PCI bus 0 slot 00000012 off 00000000 len 64 -> 64 (00011000)
+HAL: GetBusData PCI bus 0 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: GetBusData PCI bus 0 slot 0000000f off 00000000 len 64 -> 64 (00a01013)
+HAL: VIDTRACE1 pci-write off 00000010 len 4 data ffffffff wrote 4 cmd-read 2 cmd 00000003
+HAL: VIDTRACE1 pci-write off 00000010 len 4 data 82000008 wrote 4 cmd-read 2 cmd 00000003
+HAL: VIDTRACE1 pci-write off 00000014 len 4 data ffffffff wrote 4 cmd-read 2 cmd 00000003
+HAL: VIDTRACE1 pci-write off 00000014 len 4 data 00000001 wrote 4 cmd-read 2 cmd 00000003
+HAL: HalAssignSlotResources bus 0 dev 15 fn 0 -> 2 resources
+HAL: TranslateBusAddress type 5 bus 0 addr 000003b0 space 1
+HAL: VIDTRACE1 translate addr 000003b0 in 1 ok 1 out 0 phys f20003b0
+HAL: TranslateBusAddress type 5 bus 0 addr 000003bb space 1
+HAL: VIDTRACE1 translate addr 000003bb in 1 ok 1 out 0 phys f20003bb
+HAL: TranslateBusAddress type 5 bus 0 addr 000003c0 space 1
+HAL: VIDTRACE1 translate addr 000003c0 in 1 ok 1 out 0 phys f20003c0
+HAL: TranslateBusAddress type 5 bus 0 addr 000003df space 1
+HAL: VIDTRACE1 translate addr 000003df in 1 ok 1 out 0 phys f20003df
+HAL: TranslateBusAddress type 5 bus 0 addr 90000000 space 0
+HAL: VIDTRACE1 translate addr 90000000 in 0 ok 1 out 0 phys 82000000
+HAL: TranslateBusAddress type 5 bus 0 addr 9001ffff space 0
+HAL: VIDTRACE1 translate addr 9001ffff in 0 ok 1 out 0 phys 8201ffff
+HAL: TranslateBusAddress type 5 bus 0 addr 82000000 space 0
+HAL: VIDTRACE1 translate addr 82000000 in 0 ok 1 out 0 phys 82000000
+HAL: TranslateBusAddress type 5 bus 0 addr 82ffffff space 0
+HAL: VIDTRACE1 translate addr 82ffffff in 0 ok 1 out 0 phys 82ffffff
+HAL: TranslateBusAddress type 5 bus 0 addr 000003b0 space 1
+HAL: VIDTRACE1 translate addr 000003b0 in 1 ok 1 out 0 phys f20003b0
+HAL: GetBusData PCI bus 1 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: GetBusData PCI bus 1 slot 0000000d off 00000000 len 64 -> 64 (00091011)
+HAL: GetBusData PCI bus 1 slot 0000000f off 00000000 len 64 -> 64 (47581002)
+HAL: GetBusData PCI bus 1 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: GetBusData PCI bus 1 slot 0000000d off 00000000 len 64 -> 64 (00091011)
+HAL: GetBusData PCI bus 1 slot 0000000f off 00000000 len 64 -> 64 (47581002)
+HAL: GetBusData PCI bus 1 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: GetBusData PCI bus 1 slot 0000000d off 00000000 len 64 -> 64 (00091011)
+HAL: GetBusData PCI bus 1 slot 0000000f off 00000000 len 64 -> 64 (47581002)
+HAL: GetBusData PCI bus 1 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: GetBusData PCI bus 1 slot 0000000d off 00000000 len 64 -> 64 (00091011)
+HAL: GetBusData PCI bus 1 slot 0000000f off 00000000 len 64 -> 64 (47581002)
+HAL: GetBusData PCI bus 1 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: GetBusData PCI bus 1 slot 0000000d off 00000000 len 64 -> 64 (00091011)
+HAL: GetBusData PCI bus 1 slot 0000000f off 00000000 len 64 -> 64 (47581002)
+HAL: GetBusData PCI bus 1 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: GetBusData PCI bus 1 slot 0000000d off 00000000 len 64 -> 64 (00091011)
+HAL: GetBusData PCI bus 1 slot 0000000f off 00000000 len 64 -> 64 (47581002)
+HAL: GetBusData PCI bus 1 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: GetBusData PCI bus 1 slot 0000000d off 00000000 len 64 -> 64 (00091011)
+HAL: GetBusData PCI bus 1 slot 0000000f off 00000000 len 64 -> 64 (47581002)
+HAL: GetBusData PCI bus 1 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: GetBusData PCI bus 1 slot 0000000d off 00000000 len 64 -> 64 (00091011)
+HAL: GetBusData PCI bus 1 slot 0000000f off 00000000 len 64 -> 64 (47581002)
+HAL: GetBusData PCI bus 1 slot 0000000b off 00000000 len 64 -> 64 (0001106b)
+HAL: VIDTRACE1 translate addr 000003b0 in 1 ok 1 out 0 phys f20003b0
+HAL: VIDTRACE1 translate addr 000003bb in 1 ok 1 out 0 phys f20003bb
+HAL: VIDTRACE1 translate addr 000003c0 in 1 ok 1 out 0 phys f20003c0
+HAL: VIDTRACE1 translate addr 000003df in 1 ok 1 out 0 phys f20003df
+
+STOP: c000026c {Unable to Load Device Driver}
+\SystemRoot\System32\Drivers\Npfs.SYS device driver could not be loaded.
+Error Status was 0xc0000185
+
+CRASH1 BEGIN origin 806d6c00 cb 8067b4c4 dispatcher 8067b044
+CRASH1 STOP c000026c d30bcb08 c0000185 00000000 00000000
+SWEEP1 STATE entered 20 completed 20 HID0 8000c084 DBAT0 800000fe 00000012
+CRASH1 CONTEXT-UNAVAILABLE
+CRASH1 IO 114 mdl ee50df9c flags 00000043 start 2f1db000 map e7465000
+CRASH1 IO-RANGE off 00000000 count 00001610 pfn0 00000545
+CRASH1 IO 115 mdl ee50df9c flags 00000043 start 2f112000 map e6f08000
+CRASH1 IO-RANGE off 00000000 count 00008000 pfn0 0000044a
+CRASH1 IO 116 mdl ee50df9c flags 00000043 start 2f11a000 map e6f10000
+CRASH1 IO-RANGE off 00000000 count 00008000 pfn0 00000462
+CRASH1 IO 117 mdl ee50df9c flags 00000043 start 2f122000 map e7070000
+CRASH1 IO-RANGE off 00000000 count 00003000 pfn0 00000c7a
+CRASH1 IO 118 mdl ee50df9c flags 00000043 start 288f3000 map e7459000
+CRASH1 IO-RANGE off 00000000 count 00008000 pfn0 00000487
+CRASH1 IO 119 mdl ee50df9c flags 00000043 start 288fb000 map e7459000
+CRASH1 IO-RANGE off 00000000 count 00008000 pfn0 00000b9f
+CRASH1 IO 120 mdl ee50df9c flags 00000043 start 27b4e000 map e7078000
+CRASH1 IO-RANGE off 00000000 count 00004000 pfn0 000002b8
+CRASH1 IO 121 mdl ee50df9c flags 00000043 start 27b5b000 map e7461000
+CRASH1 IO-RANGE off 00000000 count 00003c00 pfn0 00000ac5
+SCSIRING2 count 426
+SCSIRING2 395 kind 00000000 adapter ee51ab88 ids 0000000a status 00010028
+SCSIRING2 detail 0002e535 00000040 00008000
+SCSIRING2 396 kind 00000001 adapter ee51ab88 ids 00ffff00 status 0000000e
+SCSIRING2 detail 8007d62c 80081874 00000000
+SCSIRING2 397 kind 00000000 adapter ee51a268 ids 00000006 status 00010000
+SCSIRING2 detail 00000000 00000000 00000000
+SCSIRING2 398 kind 00000000 adapter ee51ab88 ids 0000000a status 00010028
+SCSIRING2 detail 0002e575 00000040 00008000
+SCSIRING2 399 kind 00000001 adapter ee51ab88 ids 00ffff00 status 0000000e
+SCSIRING2 detail 8007d62c 80081874 00000000
+SCSIRING2 400 kind 00000000 adapter ee51a268 ids 00000006 status 00010000
+SCSIRING2 detail 00000000 00000000 00000000
+SCSIRING2 401 kind 00000000 adapter ee51ab88 ids 0000000a status 00010028
+SCSIRING2 detail 0002e5b5 00000016 00002c00
+SCSIRING2 402 kind 00000001 adapter ee51ab88 ids 00ffff00 status 0000000e
+SCSIRING2 detail 8007d62c 80081874 00000000
+SCSIRING2 403 kind 00000000 adapter ee51a268 ids 00000006 status 00010000
+SCSIRING2 detail 00000000 00000000 00000000
+SCSIRING2 404 kind 00000000 adapter ee51ab88 ids 0000000a status 00010028
+SCSIRING2 detail 0002e535 00000008 00001000
+SCSIRING2 405 kind 00000001 adapter ee51ab88 ids 00ffff00 status 0000000e
+SCSIRING2 detail 8007d62c 80081874 00000000
+SCSIRING2 406 kind 00000000 adapter ee51a268 ids 00000006 status 00010000
+SCSIRING2 detail 00000000 00000000 00000000
+SCSIRING2 407 kind 00000000 adapter ee51ab88 ids 0000000a status 00010028
+SCSIRING2 detail 0002e53d 00000040 00008000
+SCSIRING2 408 kind 00000001 adapter ee51ab88 ids 00ffff00 status 0000000e
+SCSIRING2 detail 8007d62c 80081874 00000000
+SCSIRING2 409 kind 00000000 adapter ee51a268 ids 00000006 status 00010000
+SCSIRING2 detail 00000000 00000000 00000000
+SCSIRING2 410 kind 00000001 adapter ee51ab88 ids 00ffff00 status 0000000e
+SCSIRING2 detail 8007d62c 80081874 00000000
+SCSIRING2 411 kind 00000000 adapter ee51a268 ids 00000006 status 00010000
+SCSIRING2 detail 00000000 00000000 00000000
+SCSIRING2 412 kind 00000000 adapter ee51ab88 ids 0000000a status 0001002a
+SCSIRING2 detail 000113b5 00000008 00001000
+SCSIRING2 413 kind 00000001 adapter ee51ab88 ids 00ffff00 status 0000000e
+SCSIRING2 detail 8007d62c 80081874 00000000
+SCSIRING2 414 kind 00000000 adapter ee51a268 ids 00000006 status 00010000
+SCSIRING2 detail 00000000 00000000 00000000
+SCSIRING2 415 kind 00000001 adapter ee51ab88 ids 00ffff00 status 0000000e
+SCSIRING2 detail 8007d62c 80081874 00000000
+SCSIRING2 416 kind 00000000 adapter ee51a268 ids 00000006 status 00010000
+SCSIRING2 detail 00000000 00000000 00000000
+SCSIRING2 417 kind 00000001 adapter ee51ab88 ids 00ffff00 status 0000000e
+SCSIRING2 detail 8007d62c 80081874 00000000
+SCSIRING2 418 kind 00000000 adapter ee51a268 ids 00000006 status 00010000
+SCSIRING2 detail 00000000 00000000 00000000
+SCSIRING2 419 kind 00000001 adapter ee51ab88 ids 00ffff00 status 0000000e
+SCSIRING2 detail 8007d62c 80081874 00000000
+SCSIRING2 420 kind 00000000 adapter ee51a268 ids 00000006 status 00010000
+SCSIRING2 detail 00000000 00000000 00000000
+SCSIRING2 421 kind 00000001 adapter ee51ab88 ids 00ffff00 status 0000000e
+SCSIRING2 detail 8007d62c 80081874 00000000
+SCSIRING2 422 kind 00000000 adapter ee51a268 ids 00000006 status 00010000
+SCSIRING2 detail 00000000 00000000 00000000
+SCSIRING2 423 kind 00000000 adapter ee51ab88 ids 0000000a status 00010028
+SCSIRING2 detail 0002d5bf 00000020 00004000
+SCSIRING2 424 kind 00000001 adapter ee51ab88 ids 00ffff00 status 0000000e
+SCSIRING2 detail 8007d62c 80081874 00000000
+SCSIRING2 425 kind 00000000 adapter ee51a268 ids 00000006 status 00010000
+SCSIRING2 detail 00000000 00000000 00000000
+SCSIRING2 426 kind 00000000 adapter ee51ab88 ids 0000000a status 00010028
+SCSIRING2 detail 0002d627 0000001e 00003c00
+CRASH1 END
+
+Restart and set the recovery options in the system control panel
+or the /CRASHDEBUG system start option. If this message reappears,
+contact your system administrator or technical support group.

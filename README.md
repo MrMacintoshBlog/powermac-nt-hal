@@ -43,13 +43,19 @@ through this HAL:
 
 ## Where it stands
 
-**Physical ANS update — 2026-11-03:** the corrected NT firmware configuration
-now reaches the NT loader, which still rejects HALV1. The reviewed LDRRS1
-status diagnostic is installed and verified; its next boot output is awaited,
-with stock-loader restoration required afterward. Follow the
-[current hardware progress](docs/ANS-HARDWARE-PROGRESS-2026-11-03.md),
-[short startup procedure](docs/ANS-STARTUP.md), and
-[BLUE/GREEN file-backup downloads](archives/floppies/2026-11-03/README.md).
+**Physical ANS update — 2026-11-05:** text-mode Setup completed on the real
+ANS 700. The recovered HALIM2 configuration repeatedly reaches the NPFS
+load failure before GUI Setup. Its latest CRASH1 blocks match the earlier
+best checkpoint exactly. The complete named NPFS file matches its reference
+fingerprint. A corrected read-only raw comparison is the next measurement.
+
+Start with the [continuation handoff](docs/ANS-HANDOFF-2026-11-05.md),
+[current hardware progress](docs/ANS-HARDWARE-PROGRESS-2026-11-05.md),
+[startup procedure](docs/ANS-STARTUP.md), and
+[BLUE/GREEN disk images, file archives and recovered source](archives/floppies/2026-11-05/README.md).
+The images are reconstructed and checked offline. Hardware testing of those
+newly generated images remains pending. The recovered HALIM2 source archive
+rebuilds byte-identically with the documented LLVM toolchain.
 
 ### Original emulator milestone
 
@@ -72,7 +78,7 @@ Screenshots of every screen are in [`traces/`](traces/).
 **Original emulator limitations:** the initial milestone did not establish a completed
 install or a keyboard driver of our own (see *Borrowed parts* below). The original
 scope is in the charter, §9; current physical hardware results are documented in the
-[2026-11-03 checkpoint](docs/ANS-HARDWARE-PROGRESS-2026-11-03.md).
+[2026-11-05 checkpoint](docs/ANS-HARDWARE-PROGRESS-2026-11-05.md).
 
 ## What we were given
 
@@ -233,4 +239,5 @@ This project stands on other people's work:
 - **MCJack123** — [`maciNTosh-bandit`](https://github.com/MCJack123/maciNTosh-bandit), the port
   of that ARC firmware to Bandit-class Power Macs, which is what put the Cuda/ADB code on this
   machine's hardware.
+
 

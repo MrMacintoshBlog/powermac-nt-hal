@@ -1,0 +1,113 @@
+hex
+: np-le32 dup ce-le16 swap 2 + ce-le16 10 lshift or ;
+: np-read
+  dup >r " read-blocks" ce-ih $call-method r> =
+;
+: np-find
+  swap drop 3D00000 + 3D00000 do
+    i c@ 0= if drop 0 unloop exit then
+    dup i B comp 0= if drop i unloop exit then
+  20 +loop
+  drop 0
+;
+: np-subdir
+  np-find dup 0= if exit then
+  dup B + c@ 18 and 10 <> if drop 0 exit then
+  1A + ce-le16
+;
+: np-cluster
+  dup 2 < over FFF8 < 0= or if drop 0 exit then
+  2 - 80 * 11235 +
+  4 0 do
+    3D00000 i 4000 * + over i 20 * + 20 np-read
+    0= if drop 0 unloop exit then
+  loop
+  drop -1
+;
+: np-check
+  3D00000 0 1 np-read 0= if
+    ." MBR read failed" cr 0 exit
+  then
+  3D001FE ce-le16 AA55 =
+  3D001D2 c@ 5 = and
+  3D001D6 np-le32 11000 = and 0= if
+    ." Extended partition differs" cr 0 exit
+  then
+  3D00000 11000 1 np-read 0= if
+    ." EBR read failed" cr 0 exit
+  then
+  3D001FE ce-le16 AA55 =
+  3D001C2 c@ 6 = and
+  3D001C6 np-le32 20 = and 0= if
+    ." NT logical partition differs" cr 0 exit
+  then
+  3D00000 11020 1 np-read 0= if
+    ." BPB read failed" cr 0 exit
+  then
+  3D001FE ce-le16 AA55 =
+  3D0000B ce-le16 200 = and
+  3D0000D c@ 80 = and
+  3D0000E ce-le16 1 = and
+  3D00010 c@ 2 = and
+  3D00011 ce-le16 200 = and
+  3D00016 ce-le16 FA = and 0= if
+    ." FAT16 geometry differs" cr 0 exit
+  then
+  3D00000 11215 20 np-read 0= if
+    ." Root directory read failed" cr 0 exit
+  then
+  " WINNT      " 4000 np-subdir
+  np-cluster 0= if ." WINNT directory failed" cr 0 exit then
+  " SYSTEM32   " 10000 np-subdir
+  np-cluster 0= if ." SYSTEM32 directory failed" cr 0 exit then
+  " DRIVERS    " 10000 np-subdir
+  np-cluster 0= if ." DRIVERS directory failed" cr 0 exit then
+  " NPFS    SYS" 10000 np-find
+  dup 0= if drop ." NPFS entry absent" cr 0 exit then
+  dup B + c@ 18 and 0=
+  over 1A + ce-le16 3A8 = and
+  swap 1C + np-le32 12A50 = and 0= if
+    ." NPFS directory entry differs" cr 0 exit
+  then
+  3D00000 11024 1 np-read 0= if
+    ." FAT1 read failed" cr 0 exit
+  then
+  3D00200 1111E 1 np-read 0= if
+    ." FAT2 read failed" cr 0 exit
+  then
+  3D00000 3D00200 200 comp 0<> if
+    ." FAT copies differ" cr 0 exit
+  then
+  3D00150 ce-le16 3A9 =
+  3D00152 ce-le16 FFF8 < 0= and 0= if
+    ." NPFS FAT chain differs" cr 0 exit
+  then
+  ." NPFS allocation verified 3A8 3A9" cr
+  4 0 do
+    3D00000 2E535 i 20 * + 20 np-read 0= if
+      ." NPFS first-cluster read failed" cr 0 unloop exit
+    then
+    3D00000 load-base i 4000 * + 4000 comp 0<> if
+      ." NPFS first-cluster bytes differ" cr 0 unloop exit
+    then
+  loop
+  3D00000 2E5B5 16 np-read 0= if
+    ." NPFS tail read failed" cr 0 exit
+  then
+  3D00000 load-base 10000 + 2A50 comp 0<> if
+    ." NPFS tail bytes differ" cr 0 exit
+  then
+  -1
+;
+: np-raw
+  load-base 3E00000 = loadsize 12A50 = and 0= if
+    ." Named NPFS buffer unavailable" cr exit
+  then
+  load-base loadsize ce-fnv 80C8D029 <> if
+    ." Named NPFS fingerprint differs" cr exit
+  then
+  ce-open 0= if exit then
+  np-check ce-close
+  if ." NPFS full raw/named comparison 0" cr
+  else ." NPFS raw check stopped" cr then
+;

@@ -1,0 +1,99 @@
+\ CLASSEND media helper. Eval performs a read-only check.
+hex
+0 value ce-ih
+
+: ce-fnv
+  over + swap 811C9DC5 -rot
+  ?do i c@ xor 1000193 * FFFFFFFF and loop
+;
+: ce-le16
+  dup c@ swap 1+ c@ 8 lshift or
+;
+: ce-open
+  " /bandit/53c825@12/sd@0,0" open-dev to ce-ih
+  ce-ih 0= if ." Disk open failed" cr 0 exit then
+  -1
+;
+: ce-close
+  ce-ih close-dev 0 to ce-ih
+;
+: ce-hal-entry?
+  " HAL     DLL" drop 3D00EA0 B comp 0=
+  3D00EAB c@ 18 and 0= and
+  3D00EBA ce-le16 50B = and
+  3D00EBC ce-le16 D600 = and
+  3D00EBE ce-le16 0= and
+;
+: ce-chain?
+  -1
+  6A 0 do
+    3D00016 i 2 * + ce-le16 50C i + = and
+  loop
+  3D000EA ce-le16 FFF8 < 0= and
+;
+: ce-read-hal
+  3D01000 172A 6B " read-blocks" ce-ih $call-method 6B =
+;
+: ce-disk?
+  3D00E00 1223 1 " read-blocks" ce-ih $call-method 1 <> if
+    ." Directory read failed" cr 0 exit
+  then
+  ce-hal-entry? 0= if ." HAL directory entry differs" cr 0 exit then
+  3D00000 1006 1 " read-blocks" ce-ih $call-method
+  3D00200 1106 1 " read-blocks" ce-ih $call-method
+  1 = swap 1 = and 0= if ." FAT read failed" cr 0 exit then
+  3D00000 3D00200 200 comp 0<> if
+    ." FAT copies differ" cr 0 exit
+  then
+  ce-chain? 0= if ." HAL chain differs" cr 0 exit then
+  ce-read-hal 0= if ." Full HAL read failed" cr 0 exit then
+  -1
+;
+: ce-check
+  ce-open 0= if exit then
+  ce-disk? if
+    ." HAL allocation verified. Disk FNV " 3D01000 D600 ce-fnv u. cr
+  then
+  ce-close
+;
+: ce-replace  ( source-fnv current-disk-fnv -- )
+  load-base 3E00000 = loadsize D600 = and 0= if
+    2drop ." Source base or size differs" cr exit
+  then
+  swap load-base D600 ce-fnv <> if
+    drop ." Source fingerprint differs" cr exit
+  then
+  ce-open 0= if drop exit then
+  ce-disk? 0= if drop ce-close exit then
+  3D01000 D600 ce-fnv <> if
+    ." Current HAL differs. No write." cr ce-close exit
+  then
+  load-base 3D01000 D600 move
+  3D01000 172A 6B " write-blocks" ce-ih $call-method 6B <> if
+    ." HAL write incomplete" cr ce-close exit
+  then
+  3D01000 D600 0 fill
+  ce-read-hal 0= if ." HAL readback incomplete" cr ce-close exit then
+  ce-close
+  3D01000 load-base D600 comp 0<> if
+    ." HAL readback differs" cr exit
+  then
+  ." HAL readback matches source" cr
+;
+: ce-install 4A202505 6A439FC7 ce-replace ;
+: ce-restore 6A439FC7 4A202505 ce-replace ;
+: ce-verify
+  0 to loadsize
+  " load /bandit/53c825@12/sd@0,0:1,\os\winnt40\hal.dll" eval
+  load-base . loadsize . cr
+  load-base 3E00000 = loadsize D600 = and if
+    load-base D600 ce-fnv u. cr
+    3D01000 load-base D600 comp . cr
+  then
+;
+
+dev /packages/pe-loader
+3D00000 10000 map-space
+3E00000 80000 map-space
+dev /
+ce-check

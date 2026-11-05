@@ -1,0 +1,21 @@
+{
+  "filesystem_images": {
+    "BLUE": "fsck_msdos -n passed",
+    "GREEN": "fsck_msdos -n passed"
+  },
+  "image_payloads": "All FAT12 files read back and compared byte-for-byte with packaged payloads; no crosslinks or orphan clusters",
+  "blue_raw_veneer_ranges": "21..15C and 15D..298 equal saved donor byte-for-byte",
+  "new_images_hardware_tested": false,
+  "source_build": {
+    "toolchain": "LLVM clang/lld 23.1.1",
+    "bytes": 54784,
+    "sha256": "d2fb635ae4760ffe394dafa80e41fe6e06e60b3b7b2725316160fb16a5d89c8f",
+    "byte_identical_to_recovered_hal": true
+  },
+  "npfs_raw_checker": {
+    "offline_cases": 58,
+    "captured_mbr_fixture": true,
+    "ebr_fixture": "synthetic",
+    "corrected_hardware_result": "pending"
+  }
+}

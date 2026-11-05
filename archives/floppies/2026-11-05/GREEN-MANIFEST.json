@@ -1,0 +1,91 @@
+{
+  "color": "GREEN",
+  "prepared_date": "2026-11-05",
+  "kind": "reconstructed-handoff-disk",
+  "fresh_physical_capture": false,
+  "hardware_tested_image": false,
+  "image_bytes": 1474560,
+  "image_sha256": "2742cf29bb4e0db54b919f4e377c54296728a54600b5e7ad94c363e10a9fc975",
+  "boot_scope": "Open Firmware recovery/data disk",
+  "donor_boot_sector_sha256": "d022f7bab6a5119b4a7f381b4befa0693f3ccb512decba06b3ba750c6a20411d",
+  "files": [
+    {
+      "path": "files/CENDCHK.OF",
+      "bytes": 2688,
+      "sha256": "0b3d08803e2c4a2b159b59306dbc7c35f9c46eebfc8f2736e0cde359905efb2a",
+      "source": "Documented GREEN transfer; verified saved payload; source diagnostics/validation1/class2-terminal1/CENDCHK.OF"
+    },
+    {
+      "path": "files/CSMNEW.SCT",
+      "bytes": 512,
+      "sha256": "1c21d9f5bd8558929770cf14b40856a010ce9d4013f904d4a83452675551cb09",
+      "source": "Documented GREEN transfer; verified saved payload; source diagnostics/loader-status1/checksum-tag1/CSMNEW.SCT"
+    },
+    {
+      "path": "files/CSMOLD.SCT",
+      "bytes": 512,
+      "sha256": "188ebef712cd475b588fa7a061e4750a6f621fc21b55f7f4d54e0724031c1746",
+      "source": "Documented GREEN transfer; verified saved payload; source diagnostics/loader-status1/checksum-tag1/CSMOLD.SCT"
+    },
+    {
+      "path": "files/ENTNEW.SCT",
+      "bytes": 512,
+      "sha256": "cdaebd41af4258c0036b495f39ad964325ae60b719615b79cfb4e5c1e082ed05",
+      "source": "Documented GREEN transfer; verified saved payload; source diagnostics/loader-status1/entry-tags1/ENTNEW.SCT"
+    },
+    {
+      "path": "files/ENTOLD.SCT",
+      "bytes": 512,
+      "sha256": "c5bc9ab3c8fbea3ff903786ecc0848f21864bfc6c0a4036f3537475fd9deecfa",
+      "source": "Documented GREEN transfer; verified saved payload; source diagnostics/loader-status1/entry-tags1/ENTOLD.SCT"
+    },
+    {
+      "path": "files/HALCEND.DLL",
+      "bytes": 54784,
+      "sha256": "edbf66a984e99ca12bb6e2dd0ac3b485057682066493d7678f95e621c2f998c1",
+      "source": "Documented GREEN transfer; verified saved payload; source diagnostics/validation1/class2-terminal1/HALCEND.DLL"
+    },
+    {
+      "path": "files/HALIM2.DLL",
+      "bytes": 54784,
+      "sha256": "d2fb635ae4760ffe394dafa80e41fe6e06e60b3b7b2725316160fb16a5d89c8f",
+      "source": "Added to reconstructed recovery set for this handoff; source diagnostics/HALIM2.DLL"
+    },
+    {
+      "path": "files/HALV1.DLL",
+      "bytes": 54784,
+      "sha256": "c7ad0c254faf580563fc3c672c4afb045b3aa49ae234346574a7721351b2d076",
+      "source": "Documented GREEN transfer; verified saved payload; source diagnostics/validation1/HALV1.DLL"
+    },
+    {
+      "path": "files/HDRCHK.OF",
+      "bytes": 11731,
+      "sha256": "2b78f2d93d8fdcec98700f8257e7a4d51e0c68d7d543984a8973e607ab0d485d",
+      "source": "Documented GREEN transfer; verified saved payload; source diagnostics/loader-status1/header-capture1/HDRCHK.OF"
+    },
+    {
+      "path": "files/LDRECHK.OF",
+      "bytes": 9852,
+      "sha256": "60e20da310134cacd78e651c273e122aa5df7c220e98e09cf16b89914f283bb5",
+      "source": "Documented GREEN transfer; verified saved payload; source diagnostics/loader-status1/entry-tags1/LDRECHK.OF"
+    },
+    {
+      "path": "files/NPFSDEFS.OF",
+      "bytes": 3034,
+      "sha256": "274178ba8af8d0a42f298c3146f8afb6492f80d636a2d2238ab14af0800e5398",
+      "source": "Prepared checker definitions; corrected MBR/EBR guard; 58 host cases; live corrected run pending"
+    },
+    {
+      "path": "files/OSLNEW.SCT",
+      "bytes": 512,
+      "sha256": "efde44a89be228b2eb2b646d27eab19cdc60e7f937f5cf5fb54a55cbb7bf8d14",
+      "source": "Documented GREEN transfer; verified saved payload; source diagnostics/loader-status1/GREEN-ANS-NEW.SECT"
+    },
+    {
+      "path": "files/OSLOLD.SCT",
+      "bytes": 512,
+      "sha256": "5a8545691c158cadbaa26f8613124050cec0f938c8402855feb13d7a5fc2c052",
+      "source": "Documented GREEN transfer; verified saved payload; source diagnostics/loader-status1/GREEN-ANS-OLD.SECT"
+    }
+  ]
+}

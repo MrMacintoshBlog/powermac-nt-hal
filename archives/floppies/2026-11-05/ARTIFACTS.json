@@ -1,0 +1,40 @@
+[
+  {
+    "color": "BLUE",
+    "filename": "BLUE-handoff-2026-11-05.img.xz",
+    "bytes": 215908,
+    "sha256": "21c1a22d17f862014d54f9a11cc61d8515c5779f2b2cd08b93892aeee58d6dee",
+    "git_blob_sha": "e80636747e591623c5deca7ec8fc95c4e17c592d",
+    "payload_files": 22
+  },
+  {
+    "color": "BLUE",
+    "filename": "BLUE-files-2026-11-05.tar.xz",
+    "bytes": 214180,
+    "sha256": "67b4afd56a3e4c56838605e360a2a2bec979ef59557cbe1720eef828ce22da38",
+    "git_blob_sha": "b58994ab91ffd05cd621f1c5da44edf60082d303",
+    "payload_files": 22
+  },
+  {
+    "color": "GREEN",
+    "filename": "GREEN-handoff-2026-11-05.img.xz",
+    "bytes": 43048,
+    "sha256": "f8c04bb6ccd9b4b2b3adc6dc370847852a7f482ec1cb6dc4e2ff0f52dacf4605",
+    "git_blob_sha": "368df32403365c960f48f255727d24651db7f45c",
+    "payload_files": 13
+  },
+  {
+    "color": "GREEN",
+    "filename": "GREEN-files-2026-11-05.tar.xz",
+    "bytes": 43928,
+    "sha256": "de2b713ed090ed98a7978dafeea0bd599dd31ee8bae4e91a8162e7bcc649829f",
+    "git_blob_sha": "b12095cf9676fed4d954b4a7a98fd17139d86e1e",
+    "payload_files": 13
+  },
+  {
+    "filename": "HALIM2-source-2026-11-05.tar.xz",
+    "bytes": 130176,
+    "sha256": "f4c5e62e86ca0b60e001011ffed0ef78afcf7d3acd25298e2c344d5c32e1c847",
+    "git_blob_sha": "57782dfc983d5441253d198fc69defed9c1fd057"
+  }
+]

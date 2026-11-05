@@ -1,0 +1,12 @@
+Excerpt from user-supplied WORK #3 HALIM2 restoration output.
+Published November 5, 2026. Command echo omitted.
+
+HAL allocation verified. Disk FNV 4A202505
+fd:,\HALIM2.DLL  3E00000 D600
+85AE99B
+HAL readback matches source
+/bandit/53c825@12/sd@0,0:1,\os\winnt40\hal.dll  3E00000 D600
+85AE99B
+0
+ok
+0 >

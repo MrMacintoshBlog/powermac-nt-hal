@@ -1,61 +1,57 @@
-# ANS cold startup — short working procedure
+# Real ANS 700 startup — recovered HALIM2 checkpoint
 
-Saved working serial profile: **38400 baud, 8 data bits, no parity, 1 stop
-bit, no flow control**. Open the ANS USB serial adapter connection and start
-logging before power-on.
+Updated November 5, 2026. The [handoff](ANS-HANDOFF-2026-11-05.md) records
+the current binary, source, disk downloads, outstanding check and captures.
 
-1. Insert the disk selected by the current test. BLUE provides BOOTDISK.OF;
-   GREEN holds recovery references. Keep GREEN available during diagnostics.
-2. Power on and wait for OpenFirmware2.26 / `0 >`. Press Return once if quiet.
-3. Enter `hex` and continue directly with the selected test.
+## Routine boot
 
-The normal route uses the previously confirmed saved firmware setup. It does
-not require a routine settings dump, repeated setenv, temporary io redirect,
-memory map or extra reset. File identity and disk-write/readback checks belong
-to the individual test and remain required there.
-
-When resuming a session already used by a boot/partial script, reset-all alone
-and wait for a fresh prompt before setting up that test. A clean cold-power-on
-session skips that reset. BOOTDISK makes its own fixed-address claims; reset
-between a file-check session that mapped3E00000/80000 and a BOOTDISK run.
-
-## Persistent console setup — one-time repair
-
-At an accessible OF console, only when establishing/repairing saved routing:
+1. Open the saved ANS serial connection at **38400 baud, 8N1, no flow control**.
+2. Insert BLUE, power on, and wait for Open Firmware `0 >`.
+3. After a previous boot or scratch session, send `reset-all` separately
+   and wait for the fresh banner and prompt.
+4. Paste the whole boot line once.
 
 ```forth
-setenv auto-boot? false
-setenv input-device ttya:38400
-setenv output-device ttya:38400
-reset-all
+hex " load fd:,\bootdisk.of" eval load-base loadsize eval
 ```
 
-Keep Serial.app open at38400 and wait for the serial prompt. These saved
-settings govern Open Firmware input/output across ordinary reboots and cold
-starts. NT/HAL diagnostic logging uses the existing separate boot/HAL path.
+Expected HALIM2 result is NPFS / `C000026C` / `C0000185`, SWEEP20/20,
+I/O121 and SCSI ring426. Capture through `CRASH1 END`.
 
-## Troubleshooting snapshot — only after unexpected behavior or settings changes
+The quoted eval on one physical line lets the console receive the full
+line before disk activity. Earlier multiline pastes after `load` repeatedly
+lost characters. Keep resets separate from subsequent commands.
 
-```forth
-hex
-printenv input-device
-printenv output-device
-printenv auto-boot?
-printenv real-base
-printenv load-base
-printenv real-mode?
-printenv little-endian?
-printenv virt-base
-load-base .
-loadaddr .
-```
+## Saved configuration
 
-Working current values, reverified November3: input/outputttya:38400,
-auto-bootfalse, real-base3F00000, load-base/loadaddr3E00000, real-modefalse,
-little-endiantrue, virt-base-1. The other printenv column is firmware defaults.
-Unexpected settings or load addresses require review before memory copies or
-writes. Previous defaults were observed and corrected; their cause is unknown.
+| Variable | Verified current setting |
+|---|---|
+| `input-device` | `ttya:38400` |
+| `output-device` | `ttya:38400` |
+| `auto-boot?` | `false` |
+| `real-base` | `3F00000` |
+| `load-base` / `loadaddr` | `3E00000` |
+| `real-mode?` | `false` |
+| `little-endian?` | `true` |
+| `virt-base` | `-1` |
 
-Current pending experiment: [one LDRRS1 native-status boot and stock restoration](ANS-HARDWARE-PROGRESS-2026-11-03.md).
-Consult its current checkpoint before using archived test files. BLUE's saved
-file archive is not a replacement for its known-good raw boot-media layout.
+These settings were measured and repaired during the recorded sessions.
+Use `printenv` to inspect actual current values if defaults have returned
+or a fresh boot shows configuration problems. Defaults such as load-base
+`4000` caused earlier invalid transfers and claim failures.
+
+If the prompt appears on the ANS monitor, the recorded temporary serial
+selection is `" ttya:38400" io`. The persistent setup uses the input/output
+values above and a separate reset. The boot script supplies the ARC
+environment for the HDD boot through `/options` on each run.
+
+## Installation geometry and recovery
+
+The HDD is `/bandit/53c825@12/sd@0,0`. The primary system partition starts
+at1000. The extended partition starts at11000 and contains the NT logical
+volume at11020. The verified HAL allocation is172A/count6B, sizeD600.
+The recorded one-disk hardware configuration is the baseline.
+
+The current installed HALIM2 FNV is085AE99B. The handoff provides recovery
+source identity, prior readback evidence, and the guarded helper. The
+outstanding NPFS measurement is read-only and is described there.
